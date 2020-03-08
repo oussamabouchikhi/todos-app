@@ -5,9 +5,9 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-use App\Todos;
+use App\Todo;
 
-$factory->define(Todos::class, function (Faker $faker) {
+$factory->define(Todo::class, function (Faker $faker) {
     return [
         // generate 3 sentences
         'title' => $faker->sentence(3),

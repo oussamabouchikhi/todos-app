@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Todos extends Model
+class Todo extends Model
 {
     //
 }
