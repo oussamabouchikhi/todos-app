@@ -13,8 +13,8 @@ class todosController extends Controller
         // get all todos
         $todos = Todo::all();
 
-       // return view('todos', ['todos', $todos]);    method 1
-       // return view('todos')->with('todos', $todos); // method 2
-        return view('todos', compact('todos')); // method 3 variable name
+       // return view('todos.todos', ['todos', $todos]);    method 1
+       // return view('todos.todos')->with('todos', $todos); // method 2
+        return view('todos.todos', compact('todos')); // method 3 variable name
     }
 }
