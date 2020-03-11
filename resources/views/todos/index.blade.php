@@ -22,14 +22,14 @@
                         <li class="list-group-item text-muted">
                             {{ $todo->title }}
                             <span class="float-right">
-                                <a href="#">
-                                    <i  style="color: #1eb2a6;" class="fas fa-times-circle"></i>
-                                </a>
-                                <a href="#">
-                                    <i  style="color: #1eb2a6;" class="fas fa-check-circle"></i>
+                                <a href="/todos/{{$todo->id}}">
+                                    <i  style="color: #1eb2a6;" class="fas fa-eye"></i>
                                 </a>
                                 <a href="#">
                                     <i  style="color: #1eb2a6;" class="fas fa-edit"></i>
+                                </a>
+                                <a href="#">
+                                    <i  style="color: #1eb2a6;" class="fas fa-times-circle"></i>
                                 </a>
                             </span>
                         </li>    

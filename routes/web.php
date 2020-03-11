@@ -19,3 +19,5 @@ Route::get('/', function () {
 
 // make a route for todos page 127.0.0.1:8000/todos 
 Route::get('/todos', 'todosController@index');
+
+Route::get('/todos/{todo}', 'todosController@show');
