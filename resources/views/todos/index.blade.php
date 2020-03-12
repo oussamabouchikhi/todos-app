@@ -14,19 +14,19 @@
                             {{ $todo->title }}
                             <span class="float-right">
                                 <a href="/todos/{{$todo->id}}">
-                                    <i  style="color: #1eb2a6;" class="fas fa-eye"></i>
+                                    <i  style="color: #8b6bff;" class="fas fa-eye"></i>
                                 </a>
                                 <a href="#">
-                                    <i  style="color: #1eb2a6;" class="fas fa-edit"></i>
+                                    <i  style="color: #8b6bff;" class="fas fa-edit"></i>
                                 </a>
                                 <a href="#">
-                                    <i  style="color: #1eb2a6;" class="fas fa-times-circle"></i>
+                                    <i  style="color: #8b6bff;" class="fas fa-times-circle"></i>
                                 </a>
                             </span>
                         </li>    
                         @endforeach
                     </ul>
-                    <a href="#" class="btn btn-primary  mt-3"  style="background-color: #1eb2a6;"><i class="fas fa-plus"></i> Add a todo</a>
+                    <a href="#" class="btn btn-primary  mt-3"  style="background-color: #8b6bff;"><i class="fas fa-plus"></i> Add a todo</a>
                 </div>
             </div>
         </div>

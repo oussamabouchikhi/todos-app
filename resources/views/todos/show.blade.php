@@ -7,7 +7,7 @@
         <div class="row pt-5 justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #8b6bff;">
                         <span class="">Details</span>
                         <span class="badge badge-warning float-right">{{ boolval($todo->completed) ? 'completed' : 'not completed' }}</span>
                     </div>    
@@ -18,4 +18,4 @@
             </div>
         </div>
     </div>
-@endsection    
+@endsection

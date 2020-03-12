@@ -28,4 +28,31 @@ class todosController extends Controller
         // return view('todos.index')->with('todo', $todo); 
         // return $todo; returns todo in json format (just for test)
     }
+
+    // create a todo 
+    public function create( ) {
+
+        return view('todos.create');
+
+    }
+
+
+    public function store( Request $request) {
+
+        // dd($request); display request info
+        // diplay todo info
+        // return $request->all();
+        // return $request->input();
+        // return $request->input('todoTitle');
+        // return $request->todoTitle;
+
+        $todo = new Todo(); // Todo Model instance
+        // name in model = name in html input
+        $todo->title = $request->todoTitle;
+        $todo->description = $request->input('todoTitle');
+        $todo->save();
+
+        return redirect('/todos'); // redirect to todos page after saving
+
+    }
 }
