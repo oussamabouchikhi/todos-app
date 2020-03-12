@@ -11,7 +11,9 @@ class todosSeeder extends Seeder
      */
     public function run()
     {
-        // generate 10 fake todos
-        factory(App\Todo::class, 10)->create();
+        // generate 5 fake todos
+        //! if you change number dont forget to migrate (php artisan migrate:refresh) then (php artisan db:seed)
+        // or php artisan migrate:refresh --seed (shortcut for both)
+        factory(App\Todo::class, 5)->create();
     }
 }
