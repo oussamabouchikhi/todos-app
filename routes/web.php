@@ -32,3 +32,6 @@ Route::post('/create', 'todosController@store') ;
 // make a route for todos page 127.0.0.1:8000/todos/id/edit
 Route::get('/todos/{todo}/edit', 'todosController@edit') ;
 Route::post('/todos/{todo}', 'todosController@update') ;
+
+// delete a todo
+Route::get('/todos/{todo}/delete', 'todosController@destroy') ;

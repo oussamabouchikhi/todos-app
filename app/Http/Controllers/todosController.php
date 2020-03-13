@@ -85,12 +85,23 @@ class todosController extends Controller
             'todoDescription' => 'required',
         ]);
 
-        $todo = Todo::find($todo); // find todo by id
+        $todo = Todo::find($todo); // find todo with id $todo
         // update with form info [use input name]
         $todo->title = $request->get('todoTitle'); 
         $todo->description = $request->get('todoDescription'); 
 
         $todo->save();
+
+        return redirect('/todos');
+
+    }
+
+    // delete a todo
+    public function destroy( $todo ) {
+
+        $todo = Todo::find($todo); // find todo with id $todo
+
+        $todo->delete();
 
         return redirect('/todos');
 
