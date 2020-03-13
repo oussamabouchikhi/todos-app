@@ -11,20 +11,39 @@
 
             <div class="cerd">
 
-                <div class="card-header">
+                <div class="card-header" style="background-color: #8b6bff;">
                     <h1 style="color: #fff;">Create a todo</h1>
                 </div>
 
                 <div class="card-body" style="background: #fff;">
-                <form action="/action" method="POST">
+                <!-- Display errors if found (method 1) -->
+               <!--  @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif -->
+                <form action="/create" method="POST">
                 @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" name="todoTitle" placeholder="enter a title">
+                        <input 
+                            type="text" 
+                            class="form-control" name="todoTitle" placeholder="enter a title"
+                            class="@error('todoTitle') is-invalid @enderror"
+                            value="{{old('todoTitle')}}"
+                            >
+                            <!-- old diplays old value in input -->
                     </div>
+                    @error('todoTitle')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                     <div class="form-group">
                         <textarea class="form-control" name="todoDescription" rows="3" placeholder="enter a description"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #8b6bff;">Create</button>
+                    <button type="submit" class="btn btn-primary btn-block" style="background-color: #8b6bff; border: none;">Create</button>
                 </form>
                 </div>
             

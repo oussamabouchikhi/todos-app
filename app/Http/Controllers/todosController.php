@@ -45,11 +45,23 @@ class todosController extends Controller
         // return $request->input();
         // return $request->input('todoTitle');
         // return $request->todoTitle;
+/* method 1
+        $validatedData = $request->validate([
+            'todoTitle' => 'required|unique:posts',
+            'todoDescription' => 'required',
+        ]);
+ */
+
+        $this->validate($request, [
+            'todoTitle' => 'required|min:4',
+            'todoDescription' => 'required|max:150',
+        ]);
+
 
         $todo = new Todo(); // Todo Model instance
         // name in model = name in html input
         $todo->title = $request->todoTitle;
-        $todo->description = $request->input('todoTitle');
+        $todo->description = $request->input('todoDescription');
         $todo->save();
 
         return redirect('/todos'); // redirect to todos page after saving

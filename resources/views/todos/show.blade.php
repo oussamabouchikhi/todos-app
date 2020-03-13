@@ -8,10 +8,14 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="background-color: #8b6bff;">
-                        <span class="">Details</span>
-                        <span class="badge badge-warning float-right">{{ boolval($todo->completed) ? 'completed' : 'not completed' }}</span>
+                        <span style="font-weight: bold; color: #fff;">Details</span>
+                        <span 
+                            class="badge badge-warning float-right" 
+                            style="font-weight: bold;color: #8b6bff;background-color: #fff;">
+                            {{ boolval($todo->completed) ? 'completed' : 'not completed' }}
+                        </span>
                     </div>    
-                    <div class="card-body text-muted">
+                    <div class="card-body" style="color: #8b6bff;">
                         {{ $todo->description }}
                     </div>
                 </div>
