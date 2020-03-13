@@ -67,4 +67,33 @@ class todosController extends Controller
         return redirect('/todos'); // redirect to todos page after saving
 
     }
+
+    // edit a todo
+    public function edit( $todo ) {
+
+        $todo = Todo::find($todo);
+
+        return view('todos.edit')->with('todo', $todo);
+
+    }
+
+    // update a todo
+    public function update( Request $request, $todo ) {
+
+        $this->validate($request, [
+            'todoTitle' => 'required',
+            'todoDescription' => 'required',
+        ]);
+
+        $todo = Todo::find($todo); // find todo by id
+        // update with form info [use input name]
+        $todo->title = $request->get('todoTitle'); 
+        $todo->description = $request->get('todoDescription'); 
+
+        $todo->save();
+
+        return redirect('/todos');
+
+    }
+
 }

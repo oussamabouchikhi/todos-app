@@ -20,8 +20,15 @@ Route::get('/', function () {
 // make a route for todos page 127.0.0.1:8000/todos 
 Route::get('/todos', 'todosController@index');
 
+// make a route for todos page 127.0.0.1:8000/todos/id 
 Route::get('/todos/{todo}', 'todosController@show');
 
+// make a route for todos page 127.0.0.1:8000/create 
 Route::get('/create', 'todosController@create');
 
-Route::post('/create', 'todosController@store');
+// when clicking add todo button 
+Route::post('/create', 'todosController@store') ;
+
+// make a route for todos page 127.0.0.1:8000/todos/id/edit
+Route::get('/todos/{todo}/edit', 'todosController@edit') ;
+Route::post('/todos/{todo}', 'todosController@update') ;

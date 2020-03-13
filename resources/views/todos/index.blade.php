@@ -16,7 +16,7 @@
                                 <a href="/todos/{{$todo->id}}">
                                     <i  style="color: #8b6bff;" class="fas fa-eye"></i>
                                 </a>
-                                <a href="#">
+                                <a href="/todos/{{$todo->id}}/edit">
                                     <i  style="color: #8b6bff;" class="fas fa-edit"></i>
                                 </a>
                                 <a href="#">
