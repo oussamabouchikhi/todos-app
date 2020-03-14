@@ -19,12 +19,13 @@ class todosController extends Controller
     }
 
     // show single todo
-    public function show( $todo ){
+    public function show( Todo $todo ){
 
-        // the static function find will todo by its id
+        // the static function find will todo by its id ($todo)
+        // With Route Model Binding [Todo $todo (as a parameter)] wed dont need this query
         // $todo = Todo::find($todo);
 
-        return view('todos.show')->with('todo', Todo::find($todo)); 
+        return view('todos.show')->with('todo', $todo); 
         // return view('todos.index')->with('todo', $todo); 
         // return $todo; returns todo in json format (just for test)
     }
@@ -69,23 +70,23 @@ class todosController extends Controller
     }
 
     // edit a todo
-    public function edit( $todo ) {
+    public function edit( Todo $todo ) {
 
-        $todo = Todo::find($todo);
+        // $todo = Todo::find($todo);
 
         return view('todos.edit')->with('todo', $todo);
 
     }
 
     // update a todo
-    public function update( Request $request, $todo ) {
+    public function update( Request $request, Todo $todo ) {
 
         $this->validate($request, [
             'todoTitle' => 'required',
             'todoDescription' => 'required',
         ]);
 
-        $todo = Todo::find($todo); // find todo with id $todo
+        // $todo = Todo::find($todo); // find todo with id $todo
         // update with form info [use input name]
         $todo->title = $request->get('todoTitle'); 
         $todo->description = $request->get('todoDescription'); 
@@ -97,9 +98,9 @@ class todosController extends Controller
     }
 
     // delete a todo
-    public function destroy( $todo ) {
+    public function destroy( Todo $todo ) {
 
-        $todo = Todo::find($todo); // find todo with id $todo
+        // $todo = Todo::find($todo); // find todo with id $todo
 
         $todo->delete();
 
