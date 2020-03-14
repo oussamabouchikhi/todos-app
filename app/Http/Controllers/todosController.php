@@ -116,4 +116,18 @@ class todosController extends Controller
 
     }
 
+
+    // complete a todo
+    public function complete( Todo $todo ) {
+
+        $todo->completed = true;
+
+        $todo->save;
+
+        session()->flash('success', 'Todo completed successfully');
+
+        return redirect('/todos');
+
+    }
+
 }

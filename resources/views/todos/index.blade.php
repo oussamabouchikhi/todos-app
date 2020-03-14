@@ -29,6 +29,11 @@
                                 <a href="/todos/{{$todo->id}}/delete">
                                     <i  style="color: #8b6bff;" class="fas fa-times-circle"></i>
                                 </a>
+                                @if (!$todo->completed)
+                                    <a href="/todos/{{$todo->id}}/complete">
+                                        <i  style="color: #8b6bff;" class="fas fa-check-circle"></i>
+                                    </a>
+                                @endif
                             </span>
                         </li>    
                         @empty
