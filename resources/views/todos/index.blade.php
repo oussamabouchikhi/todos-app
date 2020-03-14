@@ -6,6 +6,13 @@
         <div class="row pt-3 justify-content-center" style="margin: 40px 0;">
             <div class="card" style="width: 100%">
                 <h1 class="card-header text-center" style="background-color: #8b6bff; color: #fff;">All Todos</h1>
+                <!-- if this session has flash message with 'success' key -->
+                @if ( session()->has('success'))
+                    <div class="alert alert-success">
+                        <!-- get the value (message) for this key  -->
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
                 <div class="card-body">
                     <h5 class="card-title" style="color: #8b6bff;">What needs to be done</h5>
                     <ul class="list-group">

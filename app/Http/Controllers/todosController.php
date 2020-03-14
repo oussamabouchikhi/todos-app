@@ -65,6 +65,9 @@ class todosController extends Controller
         $todo->description = $request->input('todoDescription');
         $todo->save();
 
+        // flash message
+        $request->session()->flash('success', 'Todo created successfully');
+
         return redirect('/todos'); // redirect to todos page after saving
 
     }
@@ -93,6 +96,9 @@ class todosController extends Controller
 
         $todo->save();
 
+        // flash message
+        $request->session()->flash('success', 'Todo updated successfully');
+
         return redirect('/todos');
 
     }
@@ -103,6 +109,8 @@ class todosController extends Controller
         // $todo = Todo::find($todo); // find todo with id $todo
 
         $todo->delete();
+
+        session()->flash('success', 'Todo deleted successfully');
 
         return redirect('/todos');
 
